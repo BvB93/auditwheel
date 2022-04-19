@@ -41,6 +41,7 @@ def repair_wheel(
 ) -> Optional[str]:
 
     external_refs_by_fn = get_wheel_elfdata(wheel_path)[1]
+    logger.info(repr(external_refs_by_fn))
 
     # Do not repair a pure wheel, i.e. has no external refs
     if not external_refs_by_fn:
